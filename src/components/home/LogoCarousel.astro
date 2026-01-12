@@ -1,0 +1,106 @@
+---
+import { Image } from "astro:assets";
+import lgLogo from "../../assets/brands/lg.png";
+import panasonicLogo from "../../assets/brands/panasonic.png";
+import daikinLogo from "../../assets/brands/daikin.png";
+import samsungLogo from "../../assets/brands/samsung.png";
+import yorkLogo from "../../assets/brands/york.png";
+import mideaLogo from "../../assets/brands/midea.png";
+
+const logos = [
+  { name: "LG", img: lgLogo, class: "!w-2/3 !h-auto" }, // Occupy container width
+  { name: "Panasonic", img: panasonicLogo, class: "!w-full !h-auto" }, // Occupy container width
+  { name: "Daikin", img: daikinLogo, class: "h-16" },
+  { name: "Samsung", img: samsungLogo, class: "h-14" },
+  { name: "Midea", img: mideaLogo, class: "h-16" },
+  { name: "York", img: yorkLogo, class: "!w-3/4 !h-auto" }, // Occupy container width
+];
+---
+
+<section
+  class="py-16 bg-white overflow-hidden border-b border-gray-100 relative group"
+>
+  <!-- Gradient Masks for Smooth Edges -->
+  <div
+    class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"
+  >
+  </div>
+  <div
+    class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"
+  >
+  </div>
+
+  <div class="container mx-auto px-4 text-center mb-10">
+    <p class="text-xl font-bold text-gray-400 uppercase tracking-widest">
+      Aliados Tecnológicos
+    </p>
+  </div>
+
+  <div class="w-full overflow-hidden">
+    <div
+      class="animate-bounce-scroll flex items-center gap-16 px-4 w-max hover:pause"
+    >
+      {
+        logos.map((logo) => (
+          <div class="flex-shrink-0 w-40 md:w-52 flex justify-center items-center">
+            <Image
+              src={logo.img}
+              alt={`Logo ${logo.name}`}
+              class={`w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 ${logo.class || "h-16"}`}
+            />
+          </div>
+        ))
+      }
+      <!-- Duplicate a few to ensure full width on large screens initially if needed, but 'Alternate' usually handles width. 
+           However, for 'scroll-bounce' to work effectively across screen sizes, simply repeating the logos once 
+           ensures there is enough content to scroll if the screen is wide. -->
+      {
+        logos.map((logo) => (
+          <div class="flex-shrink-0 w-40 md:w-52 flex justify-center items-center">
+            <Image
+              src={logo.img}
+              alt={`Logo ${logo.name}`}
+              class={`w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 ${logo.class || "h-16"}`}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Define the bounce animation keyframes */
+  @keyframes bounce-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% + 100vw));
+    } /* Scrolls until the end touches edge */
+  }
+
+  /* On very large screens where content < width, this might look odd, 
+   so usually we just scroll a percentage or use JS. 
+   For simplicity and robustness in this request: 
+   We will scroll 50% of the track width if we duplicated content. 
+*/
+  @keyframes bounce-scroll-smart {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-50%));
+    }
+  }
+
+  .animate-bounce-scroll {
+    /* Using alternate direction for the 'Ping-Pong' effect */
+    animation: bounce-scroll-smart 30s linear infinite alternate;
+  }
+
+  /* Pause animation on hover for user interaction */
+  .hover\:pause:hover {
+    animation-play-state: paused;
+  }
+</style>

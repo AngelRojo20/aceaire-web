@@ -1,0 +1,187 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/common/Header.astro";
+import Footer from "../components/common/Footer.astro";
+import Hero from "../components/common/Hero.astro";
+import ValuesSection from "../components/ValuesSection.astro";
+import TestimonialsSection from "../components/TestimonialsSection.astro";
+import ClientSuccess from "../components/projects/ClientSuccess.astro";
+import ContactSection from "../components/home/ContactSection.astro";
+
+// Assets
+import cultureHero from "../assets/culture-hero.jpg";
+
+// SEO Metadata
+const pageTitle = "Nosotros - Misión y Visión | ACE AIRE S.A.S.";
+const pageDescription =
+  "Conozca la trayectoria de 40 años, la misión y la capacidad de ingeniería de ACE AIRE en proyectos de climatización industrial en Colombia.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  <main>
+    <!-- Page Hero -->
+    <Hero
+      title="40 Años de Ingeniería con Propósito Humano"
+      subtitle="Nuestro mayor proyecto es el crecimiento de nuestro equipo y el desarrollo de Colombia"
+      backgroundImage={cultureHero}
+      minHeight="min-h-[55vh]"
+    />
+
+    <!-- Narrative Introduction -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4" data-aos="fade-up">
+        <div class="max-w-3xl mx-auto text-center">
+          <p
+            class="text-xl md:text-2xl text-gray-700 leading-relaxed font-light"
+          >
+            <span class="font-bold text-primary">ACE AIRE S.A.S</span> es una compañía
+            comprometida con el crecimiento de Colombia. Fundada un 21 de enero de
+            1991 por el Ing. Jose Ricardo Torres Romero. En ACE AIRE S.A.S. aportamos
+            nuestra experiencia para la ejecución de proyectos a gran escala y somos
+            líderes nacionales en ventas de las marcas que representamos, garantizando
+            excelencia técnica y operativa.
+          </p>
+          <div class="w-24 h-1 bg-action mx-auto mt-10 rounded-full"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategic Section: Mission & Vision -->
+    <section class="py-20 bg-gray-50/50">
+      <div class="container mx-auto px-4">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 max-w-6xl mx-auto"
+        >
+          <!-- Mision -->
+          <div
+            class="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:border-blue-200 transition-colors"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-16 h-16 bg-blue-50 text-primary rounded-full flex items-center justify-center mb-6 text-3xl"
+            >
+              🎯
+            </div>
+            <h2 class="text-2xl font-bold font-heading text-primary mb-4">
+              Nuestra Misión
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+              Proveer soluciones de ingeniería en climatización y refrigeración
+              de alta complejidad, garantizando la continuidad operativa de
+              nuestros clientes y contribuyendo al desarrollo integral de
+              nuestro talento humano.
+            </p>
+          </div>
+
+          <!-- Vision -->
+          <div
+            class="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:border-blue-200 transition-colors"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="w-16 h-16 bg-blue-50 text-primary rounded-full flex items-center justify-center mb-6 text-3xl"
+            >
+              👁️
+            </div>
+            <h2 class="text-2xl font-bold font-heading text-primary mb-4">
+              Nuestra Visión
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+              Ser reconocidos en 2030 como el aliado líder indiscutible en
+              Colombia para proyectos HVAC de gran escala, referentes por
+              nuestra innovación técnica, sostenibilidad y solidez financiera.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Corporate Pillars -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl font-bold font-heading text-primary">
+            Nuestros Pilares
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Factor Humano -->
+          <div
+            class="p-6 text-center group"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-20 h-20 mx-auto bg-gray-50 rounded-full flex items-center justify-center text-4xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300"
+            >
+              👥
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Factor Humano</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Impulsamos el crecimiento laboral y personal de nuestro equipo,
+              entendiendo que su bienestar impacta positivamente a sus familias
+              y a nuestro servicio.
+            </p>
+          </div>
+
+          <!-- Infraestructura -->
+          <div
+            class="p-6 text-center group"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="w-20 h-20 mx-auto bg-gray-50 rounded-full flex items-center justify-center text-4xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300"
+            >
+              🏗️
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">
+              Infraestructura Total
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Capacidad probada para el diseño, desarrollo y puesta en marcha de
+              sistemas a medida para los proyectos más exigentes del país.
+            </p>
+          </div>
+
+          <!-- Etica -->
+          <div
+            class="p-6 text-center group"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div
+              class="w-20 h-20 mx-auto bg-gray-50 rounded-full flex items-center justify-center text-4xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300"
+            >
+              🌿
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">
+              Ética y Sostenibilidad
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Operamos con transparencia, cumpliendo normativas ambientales y
+              promoviendo tecnologías que reducen la huella de carbono.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Organizational Values -->
+    <ValuesSection />
+
+    <!-- Testimonials -->
+    <TestimonialsSection />
+
+    <!-- Client Success Stories -->
+    <ClientSuccess />
+
+    <!-- Contact CTA -->
+    <ContactSection />
+  </main>
+  <Footer />
+</Layout>

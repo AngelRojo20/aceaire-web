@@ -1,0 +1,81 @@
+---
+import { Image } from 'astro:assets';
+import imgSurgery from '../../assets/hospital-ahu.jpg';
+import imgChiller from '../../assets/chiller-command.jpg';
+import imgKitchen from '../../assets/kitchen-ducts.jpg';
+
+const projects = [
+  {
+    title: "Salas de Cirugía de Alta Complejidad",
+    location: "Tunja",
+    description: "Instalación de 24 unidades de ventilación (40,000 CFM) y 30TR de refrigerante variable con automatización.",
+    image: imgSurgery,
+    alt: "Ventilación mecánica hospitales Colombia - Unidades Manejadoras de Aire"
+  },
+  {
+    title: "Comando de Operaciones Especiales",
+    location: "Bogotá",
+    description: "Sistema de 50 TR en agua helada (Chiller), equipos de precisión de 5TR y ventilación mecánica automatizada.",
+    image: imgChiller,
+    alt: "Aire acondicionado industrial Bogotá - Chiller y bombas de agua"
+  },
+  {
+    title: "Cocina Industrial y Conservación",
+    location: "Bogotá",
+    description: "Extracción masiva de 30,000 CFM con extinción de incendio y 5 cuartos fríos de congelación/conservación.",
+    image: imgKitchen,
+    alt: "Ductos de extracción cocina industrial - Sistema HVAC"
+  }
+];
+---
+
+<section class="py-24 bg-slate-50">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold font-heading text-primary mb-2">Casos de Éxito</h2>
+        <p class="text-gray-600 max-w-xl">Ingeniería aplicada en los proyectos más exigentes de la región.</p>
+      </div>
+      <a href="/proyectos" class="hidden md:inline-flex items-center font-bold text-action hover:text-orange-700 transition-colors">
+        Ver todos los proyectos <span class="ml-2">&rarr;</span>
+      </a>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {projects.map((project, index) => (
+        <article class="group relative aspect-[4/5] overflow-hidden rounded-xl shadow-lg cursor-pointer" data-aos="fade-up" data-aos-delay={index * 100}>
+          <!-- Background Image -->
+          <Image 
+            src={project.image} 
+            alt={project.alt} 
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:brightness-110"
+            width={600}
+            quality="mid"
+          />
+          
+          <!-- Gradient Overlay for Contrast -->
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
+          <div class="absolute bottom-0 left-0 w-full p-8 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+            <span class="inline-block bg-action/90 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 shadow-sm">
+              {project.location}
+            </span>
+            <h3 class="text-2xl font-bold font-heading mb-3 leading-tight text-white group-hover:text-blue-200 transition-colors">
+              {project.title}
+            </h3>
+            <p class="text-sm text-gray-200 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 h-0 group-hover:h-auto overflow-hidden group-hover:mb-4">
+              {project.description}
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Mobile Button -->
+    <div class="mt-12 text-center md:hidden">
+      <a href="/proyectos" class="inline-block w-full bg-white border border-gray-300 text-primary px-6 py-4 rounded-md font-bold hover:bg-gray-50 transition-colors shadow-sm">
+        Ver todos los proyectos
+      </a>
+    </div>
+  </div>
+</section>

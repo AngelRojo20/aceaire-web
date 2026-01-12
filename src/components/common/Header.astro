@@ -1,0 +1,124 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../assets/logo-en-blanco-1920w.png";
+
+const navItems = [
+  { name: "Nosotros", href: "/nosotros" },
+  { name: "Soluciones", href: "/soluciones" },
+  { name: "Servicios", href: "/servicios" },
+  { name: "Proyectos", href: "/proyectos" },
+  { name: "Contacto", href: "/contacto" },
+];
+---
+
+<header class="sticky top-0 z-50 bg-primary text-white shadow-lg">
+  <div class="container mx-auto px-4 py-1 flex justify-between items-center">
+    <a
+      href="/"
+      class="text-2xl font-bold font-heading tracking-tight flex items-center gap-2"
+    >
+      <Image
+        src={logo}
+        alt="ACE AIRE S.A.S. - Hace aire por Colombia"
+        class="h-24 w-auto object-contain"
+        loading="eager"
+      />
+    </a>
+
+    <nav class="hidden md:flex gap-8">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="hover:text-action transition-colors font-medium text-sm lg:text-base"
+          >
+            {item.name}
+          </a>
+        ))
+      }
+    </nav>
+
+    <a
+      href="https://wa.me/573112727664?text=Hola,%20necesito%20asesoría%20comercial"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hidden md:block bg-action hover:bg-orange-600 text-white px-6 py-2 rounded-md font-bold transition-colors shadow-md"
+    >
+      Cotizar Proyecto
+    </a>
+
+    <button
+      id="menu-btn"
+      class="md:hidden text-white focus:outline-none"
+      aria-label="Abrir menú"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-8 h-8"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden absolute top-full left-0 w-full bg-primary shadow-lg z-50 md:hidden animate-fade-in"
+  >
+    <nav class="flex flex-col items-center py-6 space-y-4">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="text-white hover:text-action transition-colors font-medium text-lg w-full text-center py-2 hover:bg-white/5"
+          >
+            {item.name}
+          </a>
+        ))
+      }
+      <a
+        href="https://wa.me/573112727664?text=Hola,%20necesito%20asesoría%20comercial"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-action hover:bg-orange-600 text-white px-8 py-3 rounded-md font-bold transition-colors shadow-md mt-4"
+      >
+        Cotizar Proyecto
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  }
+</script>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+</style>

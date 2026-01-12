@@ -1,0 +1,215 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/common/Header.astro";
+import Footer from "../components/common/Footer.astro";
+import Hero from "../components/common/Hero.astro";
+import ContactSection from "../components/home/ContactSection.astro";
+import { Image } from "astro:assets";
+
+// Images
+import heroImage from "../assets/hero-bg.jpg"; // Using generic hero background
+import projectRoof from "../assets/services/projects/project-roof-ducts.jpg";
+import projectTowers from "../assets/services/projects/project-cooling-towers.jpg";
+import projectLg from "../assets/services/projects/project-lg-units.jpg";
+import projectDucts from "../assets/services/projects/project-duct-system.jpg";
+import projectHospital from "../assets/hospital-ahu.jpg";
+import projectKitchen from "../assets/kitchen-ducts.jpg";
+
+// Data
+const capabilities = [
+  { name: "Diseño HVAC", icon: "📐" },
+  { name: "Montaje Industrial", icon: "🏗️" },
+  { name: "Automatización", icon: "🤖" },
+  { name: "Eficiencia Energética", icon: "⚡" },
+  { name: "Ventilación Mecánica", icon: "🌬️" },
+  { name: "Refrigeración", icon: "❄️" },
+  { name: "Redes Hidráulicas", icon: "💧" },
+  { name: "Mantenimiento", icon: "🛡️" },
+];
+
+const projects = [
+  {
+    title: "Hospital San Vicente",
+    desc: "Instalación de Chiller de 200 TR y UMAs hospitalarias",
+    image: projectHospital,
+    alt: "Sistema de climatización hospitalaria con estándares de pureza",
+  },
+  {
+    title: "Torre Empresarial Sigma",
+    desc: "Sistema VRF de 500 HP con control centralizado",
+    image: projectLg,
+    alt: "Unidades condensadoras VRF en cubierta",
+  },
+  {
+    title: "Planta de Producción Alpina",
+    desc: "Ventilación industrial y control de humedad",
+    image: projectDucts,
+    alt: "Red de ductos industriales en planta de producción",
+  },
+  {
+    title: "Centro Comercial Viva",
+    desc: "Torres de enfriamiento para anillo de agua",
+    image: projectTowers,
+    alt: "Torres de enfriamiento de alta capacidad",
+  },
+  {
+    title: "Complejo Logístico",
+    desc: "Ducterí́a en cubierta para grandes superficies",
+    image: projectRoof,
+    alt: "Instalación de ductos expuestos en cubierta industrial",
+  },
+  {
+    title: "Restaurante La Casona",
+    desc: "Extracción de cocinas industriales y filtrado",
+    image: projectKitchen,
+    alt: "Campanas de extracción y ductos en cocina industrial",
+  },
+  {
+    title: "Clínica del Norte",
+    desc: "Renovación de sistema de agua helada",
+    image: projectHospital, // Reusing for scalability demo
+    alt: "Cuarto técnico de bombas y chillers",
+  },
+  {
+    title: "Edificio Corporativo 26",
+    desc: "Sistemas Mini-Split y Cassette de alta eficiencia",
+    image: projectLg, // Reusing
+    alt: "Instalación de unidades exteriores en fachada",
+  },
+];
+
+const pageTitle = "Proyectos de Ingeniería HVAC | ACE AIRE S.A.S.";
+const pageDescription =
+  "Más de 1.300 proyectos ejecutados que respaldan nuestra capacidad técnica y operativa en toda Colombia.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <Hero
+      title="Ingeniería que Transforma el Territorio Nacional"
+      subtitle="Más de 1.300 proyectos ejecutados que respaldan nuestra capacidad técnica y operativa en toda Colombia"
+      backgroundImage={heroImage}
+      minHeight="min-h-[60vh]"
+    />
+
+    <!-- Cifras y Capacidades -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <!-- Big Stats -->
+        <div
+          class="flex flex-col md:flex-row gap-8 lg:gap-16 justify-center items-center mb-16 text-center"
+          data-aos="fade-up"
+        >
+          <div class="p-6">
+            <h3
+              class="text-5xl lg:text-6xl font-black font-heading text-primary mb-2 tracking-tight"
+            >
+              <span class="text-action">+</span>92.000
+            </h3>
+            <p class="text-xl lg:text-2xl text-gray-600 font-medium">
+              Toneladas Instaladas
+            </p>
+          </div>
+          <div class="hidden md:block w-px h-24 bg-gray-200"></div>
+          <div class="p-6">
+            <h3
+              class="text-5xl lg:text-6xl font-black font-heading text-primary mb-2 tracking-tight"
+            >
+              <span class="text-action">+</span>1.332
+            </h3>
+            <p class="text-xl lg:text-2xl text-gray-600 font-medium">
+              Obras Ejecutadas
+            </p>
+          </div>
+        </div>
+
+        <!-- Capabilities Grid -->
+        <div
+          class="bg-primary rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden"
+          data-aos="zoom-in"
+        >
+          <!-- Decorative background pattern -->
+          <div
+            class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"
+          >
+          </div>
+
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-8 relative z-10"
+          >
+            {
+              capabilities.map((cap) => (
+                <div class="flex flex-col items-center text-center group">
+                  <div class="text-4xl md:text-5xl mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                    {cap.icon}
+                  </div>
+                  <h4 class="text-white font-bold text-lg md:text-xl tracking-wide">
+                    {cap.name}
+                  </h4>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería de Proyectos -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-3xl font-bold font-heading text-primary">
+            Nuestra Huella en Colombia
+          </h2>
+          <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+            Explora casos de éxito donde nuestra ingeniería ha garantizado
+            confort, seguridad y eficiencia operativa.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+            projects.map((project, index) => (
+              <div
+                class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <div class="aspect-video overflow-hidden bg-gray-200">
+                  <Image
+                    src={project.image}
+                    alt={project.alt}
+                    width={600}
+                    loading="lazy"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div class="p-6 border-t border-gray-100">
+                  <h3 class="font-bold text-xl text-primary mb-2 group-hover:text-action transition-colors">
+                    {project.title}
+                  </h3>
+                  <p class="text-sm text-gray-700 leading-relaxed">
+                    {project.desc}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- Load More / CTA Placeholder (Optional) -->
+        <!-- 
+        <div class="mt-12 text-center">
+             <button class="px-8 py-3 border border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition-colors">Ver Más Proyectos</button>
+        </div>
+        -->
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <ContactSection data-aos="fade-up" />
+  </main>
+  <Footer />
+</Layout>

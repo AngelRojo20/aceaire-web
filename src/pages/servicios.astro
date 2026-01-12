@@ -1,0 +1,435 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/common/Header.astro";
+import Footer from "../components/common/Footer.astro";
+import Hero from "../components/common/Hero.astro";
+import ContactSection from "../components/home/ContactSection.astro";
+import { Image } from "astro:assets";
+
+// Images
+import servicesHero from "../assets/services-hero.jpg";
+// Real project images
+import projectRoof from "../assets/services/projects/project-roof-ducts.jpg";
+import projectTowers from "../assets/services/projects/project-cooling-towers.jpg";
+import projectLg from "../assets/services/projects/project-lg-units.jpg";
+import projectDucts from "../assets/services/projects/project-duct-system.jpg";
+// Spare parts images
+import repuesto1 from "../assets/services/parts/repuesto-1.png";
+import repuesto2 from "../assets/services/parts/repuesto-2.png";
+import repuesto3 from "../assets/services/parts/repuesto-3.png";
+import repuesto4 from "../assets/services/parts/repuesto-4.jpg";
+
+const pageTitle = "Servicios de Ingeniería HVAC | ACE AIRE S.A.S.";
+const pageDescription =
+  "Instalación, mantenimiento predictivo y correctivo, y gestión de garantías para sistemas de climatización industrial.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <Hero
+      title="Ingeniería Integral para el Ciclo de Vida HVAC"
+      subtitle="Diseño, instalación y gestión operativa de sistemas de climatización y ventilación mecánica con estándares de precisión"
+      backgroundImage={servicesHero}
+      minHeight="min-h-[60vh]"
+    />
+
+    <!-- Banner de Autoridad -->
+    <section class="py-12 bg-white border-b border-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Icon 1 -->
+          <div
+            class="flex items-center gap-4 p-4 rounded-lg bg-gray-50/50 hover:bg-white hover:shadow-sm transition-all"
+          >
+            <div
+              class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-2xl"
+            >
+              🏅
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Líder de la Industria</h3>
+              <p class="text-sm text-gray-600">
+                Centro de servicio especializado de marcas líderes.
+              </p>
+            </div>
+          </div>
+          <!-- Icon 2 -->
+          <div
+            class="flex items-center gap-4 p-4 rounded-lg bg-gray-50/50 hover:bg-white hover:shadow-sm transition-all"
+          >
+            <div
+              class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-2xl"
+            >
+              ✅
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Calidad Garantizada</h3>
+              <p class="text-sm text-gray-600">
+                Técnicos expertos certificados por el SENA.
+              </p>
+            </div>
+          </div>
+          <!-- Icon 3 -->
+          <div
+            class="flex items-center gap-4 p-4 rounded-lg bg-gray-50/50 hover:bg-white hover:shadow-sm transition-all"
+          >
+            <div
+              class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-2xl"
+            >
+              🤝
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Soporte Directo</h3>
+              <p class="text-sm text-gray-600">
+                Respaldados por los fabricantes que representamos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instalación y Montaje -->
+    <section class="py-20 md:py-24 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div data-aos="fade-right">
+            <h2 class="text-3xl font-bold font-heading text-primary mb-6">
+              Instalación y Montaje Técnico
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+              No solo vendemos equipos; integramos soluciones. Nuestro proceso
+              de instalación considera cada variable crítica para asegurar un
+              rendimiento óptimo desde el día uno.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span
+                  class="w-6 h-6 rounded-full bg-action text-white flex items-center justify-center text-sm font-bold mt-0.5"
+                  >1</span
+                >
+                <div>
+                  <h4 class="font-bold text-gray-900">
+                    Selección Técnica Rigurosa
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    Evaluamos la carga térmica real para dimensionar el equipo
+                    exacto.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="w-6 h-6 rounded-full bg-action text-white flex items-center justify-center text-sm font-bold mt-0.5"
+                  >2</span
+                >
+                <div>
+                  <h4 class="font-bold text-gray-900">Ingeniería de Detalle</h4>
+                  <p class="text-sm text-gray-600">
+                    Análisis preciso de rutas para tuberías, cableado eléctrico
+                    y sistemas de drenaje.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="w-6 h-6 rounded-full bg-action text-white flex items-center justify-center text-sm font-bold mt-0.5"
+                  >3</span
+                >
+                <div>
+                  <h4 class="font-bold text-gray-900">Coordinación Civil</h4>
+                  <p class="text-sm text-gray-600">
+                    Evaluación y comunicación de requerimientos estructurales
+                    para soportes y bases.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="relative group" data-aos="fade-left">
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="aspect-square overflow-hidden rounded-xl shadow-md group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+              >
+                <Image
+                  src={projectRoof}
+                  alt="Instalación de ductos en cubierta"
+                  width={400}
+                  height={400}
+                  loading="eager"
+                  fetchpriority="high"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
+              <div
+                class="aspect-square overflow-hidden rounded-xl shadow-md group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+              >
+                <Image
+                  src={projectTowers}
+                  alt="Montaje de torres de enfriamiento industrial"
+                  width={400}
+                  height={400}
+                  loading="eager"
+                  fetchpriority="high"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
+              <div
+                class="aspect-square overflow-hidden rounded-xl shadow-md group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+              >
+                <Image
+                  src={projectLg}
+                  alt="Unidades condensadoras LG VRF"
+                  width={400}
+                  height={400}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
+              <div
+                class="aspect-square overflow-hidden rounded-xl shadow-md group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+              >
+                <Image
+                  src={projectDucts}
+                  alt="Sistemas de distribución de aire complejos"
+                  width={400}
+                  height={400}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
+            </div>
+            <!-- Decorative background element behind grid -->
+            <div
+              class="absolute -inset-4 bg-gray-100 rounded-3xl -z-10 transform rotate-1 scale-105 opacity-50"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gestión de Mantenimientos -->
+    <section class="py-20 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl font-bold font-heading text-primary">
+            Gestión Integral de Mantenimiento
+          </h2>
+          <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+            Maximizamos la disponibilidad de sus activos con estrategias
+            adaptadas a la criticidad de su operación.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Predictivo -->
+          <div
+            class="bg-gray-50 p-8 rounded-xl border border-transparent hover:border-blue-100 hover:shadow-lg transition-all group text-center"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-14 h-14 bg-white text-primary rounded-lg shadow-sm flex items-center justify-center text-3xl mb-6 mx-auto group-hover:scale-110 transition-transform"
+            >
+              🔮
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">
+              Mantenimiento Predictivo
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Técnicas avanzadas para monitorear condiciones y pronosticar
+              fallas, permitiendo actuar antes de que ocurran interrupciones no
+              planificadas.
+            </p>
+          </div>
+
+          <!-- Preventivo -->
+          <div
+            class="bg-gray-50 p-8 rounded-xl border border-transparent hover:border-blue-100 hover:shadow-lg transition-all group text-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="w-14 h-14 bg-white text-primary rounded-lg shadow-sm flex items-center justify-center text-3xl mb-6 mx-auto group-hover:scale-110 transition-transform"
+            >
+              🛡️
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">
+              Mantenimiento Preventivo
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Rutinas programadas de limpieza, inspección y ajuste para mantener
+              la eficiencia energética y operativa en su punto óptimo.
+            </p>
+          </div>
+
+          <!-- Correctivo -->
+          <div
+            class="bg-gray-50 p-8 rounded-xl border border-transparent hover:border-blue-100 hover:shadow-lg transition-all group text-center"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div
+              class="w-14 h-14 bg-white text-action rounded-lg shadow-sm flex items-center justify-center text-3xl mb-6 mx-auto group-hover:scale-110 transition-transform"
+            >
+              🚑
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">
+              Mantenimiento Correctivo
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Respuesta técnica inmediata y calificada para diagnosticar y
+              reparar fallos inesperados, restableciendo la operación en el
+              menor tiempo posible.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infografía ROI -->
+    <section class="bg-primary text-white relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-[url('/images/pattern-grid.png')] opacity-10"
+      >
+      </div>
+      <!-- Optional pattern -->
+      <div class="container mx-auto px-4 relative z-10 w-full">
+        <div class="flex flex-col md:flex-row items-stretch w-full">
+          <!-- Dato 1 -->
+          <div
+            class="flex-1 flex flex-col justify-center items-center text-center py-20 px-8"
+            data-aos="fade-in"
+            data-aos-delay="100"
+          >
+            <div class="text-5xl mb-4">⚡</div>
+            <div class="text-4xl font-bold font-heading mb-2 text-action">
+              20%
+            </div>
+            <h4 class="text-xl font-bold mb-2">Ahorro de Energía</h4>
+            <p class="text-blue-100 text-sm">
+              Sin mantenimiento, el consumo eléctrico puede aumentar
+              drásticamente.
+            </p>
+          </div>
+          <!-- Dato 2 -->
+          <div
+            class="flex-1 flex flex-col justify-center items-center text-center py-20 px-8 border-t md:border-t-0 md:border-l border-white/20"
+            data-aos="fade-in"
+            data-aos-delay="200"
+          >
+            <div class="text-5xl mb-4">⏳</div>
+            <div class="text-4xl font-bold font-heading mb-2 text-action">
+              10+ Años
+            </div>
+            <h4 class="text-xl font-bold mb-2">Vida Útil Extendida</h4>
+            <p class="text-blue-100 text-sm">
+              Proteja su inversión capital asegurando la longevidad de sus
+              equipos.
+            </p>
+          </div>
+          <!-- Dato 3 -->
+          <div
+            class="flex-1 flex flex-col justify-center items-center text-center py-20 px-8 border-t md:border-t-0 md:border-l border-white/20"
+            data-aos="fade-in"
+            data-aos-delay="300"
+          >
+            <div class="text-5xl mb-4">📈</div>
+            <div class="text-4xl font-bold font-heading mb-2 text-action">
+              99.9%
+            </div>
+            <h4 class="text-xl font-bold mb-2">Uptime Operativo</h4>
+            <p class="text-blue-100 text-sm">
+              Identificación proactiva de problemas antes de que causen paradas
+              críticas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Repuestos y Garantías -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 text-center max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold font-heading text-primary mb-6">
+          Repuestos Originales y Garantías
+        </h2>
+        <p class="text-lg text-gray-600 mb-8">
+          Como aliados directos de fábrica, gestionamos garantías de manera ágil
+          y aseguramos el suministro de repuestos originales. Esto garantiza que
+          sus equipos mantengan las especificaciones de fábrica durante toda su
+          vida útil.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+          <span
+            class="px-6 py-3 bg-white rounded-full shadow-sm text-gray-700 font-medium border border-gray-100"
+            >🚚 Entregas Oportunas</span
+          >
+          <span
+            class="px-6 py-3 bg-white rounded-full shadow-sm text-gray-700 font-medium border border-gray-100"
+            >🏭 Acceso a Fábrica</span
+          >
+          <span
+            class="px-6 py-3 bg-white rounded-full shadow-sm text-gray-700 font-medium border border-gray-100"
+            >📜 Gestión Documental</span
+          >
+        </div>
+
+        <!-- Spare Parts Visual Grid -->
+        <div class="mt-16 mx-auto max-w-2xl">
+          <div class="grid grid-cols-2 gap-4">
+            <div
+              class="aspect-video overflow-hidden rounded-xl shadow-md group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+            >
+              <Image
+                src={repuesto1}
+                alt="Inventario de repuestos originales HVAC"
+                width={400}
+                height={300}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+            <div
+              class="aspect-video overflow-hidden rounded-xl shadow-md group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+            >
+              <Image
+                src={repuesto2}
+                alt="Componentes mecánicos de precisión"
+                width={400}
+                height={300}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+            <div
+              class="aspect-video overflow-hidden rounded-xl shadow-md group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+            >
+              <Image
+                src={repuesto3}
+                alt="Sistemas de serpentines y aletas"
+                width={400}
+                height={300}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+            <div
+              class="aspect-video overflow-hidden rounded-xl shadow-md group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+            >
+              <Image
+                src={repuesto4}
+                alt="Tarjetas electrónicas y control"
+                width={400}
+                height={300}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <ContactSection />
+  </main>
+  <Footer />
+</Layout>

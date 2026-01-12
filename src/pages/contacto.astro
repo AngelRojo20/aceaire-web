@@ -1,0 +1,582 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/common/Header.astro";
+import Footer from "../components/common/Footer.astro";
+import Hero from "../components/common/Hero.astro";
+import PaymentPortal from "../components/PaymentPortal.astro";
+import { Image } from "astro:assets";
+import heroImage from "../assets/hero-bg.jpg"; // Using generic hero background
+import socialBgImg from "../assets/social-bg.png";
+import chillerCommand from "../assets/chiller-command.jpg";
+import cultureHero from "../assets/culture-hero.jpg";
+
+// Metadata
+const pageTitle = "Contacto e Ingeniería | ACE AIRE S.A.S.";
+const pageDescription =
+  "Conecte con nuestra ingeniería. Sedes en Funza y Girardot para atención nacional en proyectos HVAC.";
+
+// Channels Data
+const channels = [
+  {
+    title: "Ventas y Asesoría",
+    phone: "311 272 7664",
+    link: "https://wa.me/573112727664?text=Hola,%20necesito%20asesoría%20comercial",
+    cta: "Chatear con un Asesor",
+    icon: "phone",
+    target: "_blank",
+    rel: "noopener noreferrer",
+  },
+  {
+    title: "Proyectos e Ingeniería",
+    phone: "320 228 5812",
+    link: "https://wa.me/573202285812?text=Hola,%20quiero%20consultar%20sobre%20un%20proyecto",
+    cta: "Consultar Ingeniería",
+    icon: "hardhat",
+    target: "_blank",
+    rel: "noopener noreferrer",
+  },
+  {
+    title: "Servicio al Cliente",
+    phone: "311 202 7807",
+    link: "https://wa.me/573112027807?text=Hola,%20necesito%20soporte%20técnico",
+    cta: "Soporte Técnico",
+    icon: "headphones",
+    target: "_blank",
+    rel: "noopener noreferrer",
+  },
+  {
+    title: "Correo Electrónico",
+    phone: "ventas@aceaire.com",
+    link: "mailto:ventas@aceaire.com?subject=Consulta%20Técnica%20Web%20-%20ACE%20AIRE%20SAS&body=Cordial%20saludo%20equipo%20de%20ventas,%20estoy%20interesado%20en...",
+    cta: "Enviar Mensaje",
+    icon: "mail",
+    target: "_blank",
+    rel: "noopener noreferrer",
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <Hero
+      title="Conecte con la Ingeniería HVAC de Vanguardia"
+      subtitle="Estamos listos para dimensionar su próximo gran proyecto en cualquier punto de Colombia"
+      backgroundImage={heroImage}
+      minHeight="min-h-[60vh]"
+    />
+
+    <!-- Grid de Canales Directos -->
+    <section class="py-16 bg-white relative -mt-20 z-10">
+      <div class="container mx-auto px-4" data-aos="fade-up">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Channel Cards -->
+          {
+            channels.map((channel, index) => (
+              <div
+                class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                  {channel.icon === "phone" && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="28"
+                      height="28"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                  )}
+                  {channel.icon === "hardhat" && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="28"
+                      height="28"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M2 22h20" />
+                      <path d="M9 6h6" />
+                      <path d="M10 22v-6h4v6" />
+                      <path d="M6 10.61a5.5 5.5 0 0 1 5.92-5.59 5.5 5.5 0 0 1 5.95 5.25" />
+                    </svg>
+                  )}
+                  {channel.icon === "headphones" && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="28"
+                      height="28"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                      <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+                    </svg>
+                  )}
+                  {channel.icon === "mail" && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="28"
+                      height="28"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect width="20" height="16" x="2" y="4" rx="2" />
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                  )}
+                </div>
+                <h3 class="font-bold text-lg text-primary mb-2 line-clamp-1">
+                  {channel.title}
+                </h3>
+                <p class="text-gray-500 mb-6 font-medium text-sm lg:text-base">
+                  {channel.phone}
+                </p>
+                <a
+                  href={channel.link}
+                  target={channel.target || "_self"}
+                  rel={
+                    channel.target === "_blank"
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  class="mt-auto inline-flex items-center justify-center px-6 py-2.5 bg-white border border-action text-action hover:bg-action hover:text-white rounded text-sm font-bold transition-all uppercase tracking-wide w-full"
+                >
+                  {channel.cta}
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Sedes con Mapas -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold font-heading text-primary">
+            Nuestras Sedes Operativas
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Sede Central -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
+            data-aos="fade-right"
+          >
+            <div class="h-64 relative overflow-hidden group">
+              <Image
+                src={chillerCommand}
+                alt="Instalaciones Sede Central Funza - ACE AIRE S.A.S."
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300"
+              >
+              </div>
+            </div>
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="w-2 h-2 rounded-full bg-action"></span>
+                <h3 class="text-xl font-bold text-primary">
+                  Sede Central - Funza
+                </h3>
+              </div>
+              <p class="text-gray-600 mb-2 font-medium">
+                Parque Empresarial Celta Trade Park - Km 7 Autopista Medellín
+                Costado occidental - Bodega 33B
+              </p>
+              <p class="text-sm text-gray-500 mb-6">
+                Centro logístico y operativo en la Autopista Medellín.
+              </p>
+
+              <div class="mt-auto">
+                <a
+                  href="https://www.google.com/maps/dir//Celta+Trade+Park+Parque+Industrial,+Siberia,+costado+sur,+Autopista+medelllin,+Bogot%C3%A1-La+Vega+%23Cl+80+km+7,+costado+Occidental,+Funza,+Cundinamarca,+Colombia/@4.766646,-74.181267,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8e3f8249fcc97837:0x611e9b75e664a4ff!2m2!1d-74.1772028!2d4.7692074?hl=es-ES&entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ver ruta hacia sede Funza en Google Maps"
+                  class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-action text-action font-bold hover:bg-action hover:text-white transition-all w-full justify-center group"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    ><polygon points="3 11 22 2 13 21 11 13 3 11"
+                    ></polygon><line x1="13" x2="22" y1="21" y2="2"></line></svg
+                  >
+                  Cómo Llegar
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sede Girardot -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
+            data-aos="fade-left"
+          >
+            <div class="h-64 relative overflow-hidden group">
+              <Image
+                src={cultureHero}
+                alt="Equipo de Ingeniería Sede Girardot - ACE AIRE S.A.S."
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300"
+              >
+              </div>
+            </div>
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="w-2 h-2 rounded-full bg-action"></span>
+                <h3 class="text-xl font-bold text-primary">Sede Girardot</h3>
+              </div>
+              <p class="text-gray-600 mb-2 font-medium">
+                Centro Comercial El Parque - Carrera 12 No. 17-61 - local 211
+                Piso 1
+              </p>
+              <p class="text-sm text-gray-500 mb-6">
+                Atención especializada para la región del Alto Magdalena.
+              </p>
+              <div class="mt-auto">
+                <a
+                  href="https://www.google.com/maps/dir//Centro+Comercial+El+Parque,+Girardot,+Cundinamarca"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ver ruta hacia sede Girardot en Google Maps"
+                  class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-action text-action font-bold hover:bg-action hover:text-white transition-all w-full justify-center group"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    ><polygon points="3 11 22 2 13 21 11 13 3 11"
+                    ></polygon><line x1="13" x2="22" y1="21" y2="2"></line></svg
+                  >
+                  Cómo Llegar
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media Split Section -->
+    <section class="bg-white border-t border-gray-100 py-12">
+      <div
+        class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+      >
+        <!-- Visual Column -->
+        <div data-aos="fade-right">
+          <Image
+            src={socialBgImg}
+            alt="Ingeniería HVAC en acción"
+            class="rounded-2xl shadow-xl aspect-video md:aspect-square object-cover w-full h-full"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Content Column -->
+        <div class="flex flex-col justify-center" data-aos="fade-left">
+          <h2 class="text-3xl font-bold font-heading text-primary mb-4">
+            Siga nuestra trayectoria
+          </h2>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            Únase a nuestra comunidad digital para conocer de cerca los hitos de
+            ingeniería que estamos alcanzando en toda Colombia.
+          </p>
+
+          <div class="space-y-4">
+            <!-- Facebook Button -->
+            <a
+              href="https://www.facebook.com/AceAireSas"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-6 p-5 rounded-2xl border border-gray-200 hover:border-action hover:shadow-lg transition-all group bg-white w-full"
+            >
+              <div
+                class="bg-blue-50 p-4 rounded-full text-primary group-hover:bg-orange-50 group-hover:text-action transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  ><path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  ></path></svg
+                >
+              </div>
+              <div>
+                <h4
+                  class="font-bold text-lg text-primary group-hover:text-action transition-colors"
+                >
+                  Facebook
+                </h4>
+                <p class="text-sm text-gray-500">Noticias y comunidad</p>
+              </div>
+              <div
+                class="ml-auto text-gray-400 group-hover:text-action transition-colors"
+              >
+              </div>
+            </a>
+
+            <!-- Instagram Button -->
+            <a
+              href="https://www.instagram.com/aceairesas/?hl=af"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-6 p-5 rounded-2xl border border-gray-200 hover:border-action hover:shadow-lg transition-all group bg-white w-full"
+            >
+              <div
+                class="bg-blue-50 p-4 rounded-full text-primary group-hover:bg-orange-50 group-hover:text-action transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"
+                  ></rect><path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"
+                  ></line></svg
+                >
+              </div>
+              <div>
+                <h4
+                  class="font-bold text-lg text-primary group-hover:text-action transition-colors"
+                >
+                  Instagram
+                </h4>
+                <p class="text-sm text-gray-500">Proyectos en tiempo real</p>
+              </div>
+              <div
+                class="ml-auto text-gray-400 group-hover:text-action transition-colors"
+              >
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment Portal -->
+    <PaymentPortal />
+
+    <!-- Formulario B2B -->
+    <section class="py-16 bg-white" id="formulario">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-3xl font-bold font-heading text-primary">
+            Solicitud de Ingeniería
+          </h2>
+          <p class="text-gray-600 mt-2">
+            Diligencie el siguiente formulario para que nuestro departamento de
+            proyectos evalúe sus requerimientos.
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <form class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Nombre -->
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Nombre de Contacto</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-gray-50 focus:bg-white"
+                  placeholder="Nombre del responsable"
+                  required
+                />
+              </div>
+              <!-- Empresa -->
+              <div>
+                <label
+                  for="company"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Empresa / Razón Social</label
+                >
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  class="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-gray-50 focus:bg-white"
+                  placeholder="Nombre de la compañía"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Correo Corporativo</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-gray-50 focus:bg-white"
+                  placeholder="ejemplo@empresa.com"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="phone"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Teléfono de Contacto</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-gray-50 focus:bg-white"
+                  placeholder="+57 "
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Tipo de Proyecto -->
+            <div>
+              <label
+                for="projectType"
+                class="block text-sm font-medium text-gray-700 mb-2"
+                >Tipo de Proyecto</label
+              >
+              <select
+                id="projectType"
+                name="projectType"
+                class="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-gray-50 focus:bg-white"
+                required
+              >
+                <option value="" disabled selected
+                  >Seleccione el sector...</option
+                >
+                <option value="industrial"
+                  >Sector Industrial (Plantas, Bodegas)</option
+                >
+                <option value="comercial"
+                  >Sector Comercial (Oficinas, Retail)</option
+                >
+                <option value="salud"
+                  >Sector Salud (Hospitales, Laboratorios)</option
+                >
+                <option value="residencial">Residencial / Otro</option>
+              </select>
+            </div>
+
+            <div>
+              <label
+                for="message"
+                class="block text-sm font-medium text-gray-700 mb-2"
+                >Detalle de Requerimientos</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-gray-50 focus:bg-white resize-none"
+                placeholder="Describa capacidad estimada, área a climatizar o equipos requeridos..."
+                required></textarea>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="flex items-center h-5">
+                <input
+                  id="privacy-policy"
+                  name="privacy"
+                  type="checkbox"
+                  class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary focus:ring-2 invalid:border-red-500 invalid:text-red-600 focus:invalid:border-red-500 focus:invalid:ring-red-500"
+                  required
+                />
+              </div>
+              <label
+                for="privacy-policy"
+                class="text-sm text-gray-600 cursor-pointer"
+              >
+                Autorizo el tratamiento de mis datos personales según la <a
+                  href="/politica-de-privacidad"
+                  class="text-primary hover:underline font-medium"
+                  >Ley 1581 de 2012</a
+                > y la <a
+                  href="/politica-de-privacidad"
+                  class="text-primary hover:underline font-medium"
+                  >política de privacidad</a
+                > de ACE AIRE S.A.S.
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-primary hover:bg-blue-900 text-white font-bold py-4 rounded-md transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-lg"
+            >
+              Enviar Solicitud
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

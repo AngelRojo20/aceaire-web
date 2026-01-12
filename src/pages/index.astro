@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/common/Header.astro";
+import Footer from "../components/common/Footer.astro";
+import Hero from "../components/common/Hero.astro";
+import ValueProps from "../components/common/ValueProps.astro";
+import WhyChooseUs from "../components/home/WhyChooseUs.astro";
+import Stats from "../components/home/Stats.astro";
+import LogoCarousel from "../components/home/LogoCarousel.astro";
+import FeaturedProjects from "../components/home/FeaturedProjects.astro";
+import ContactSection from "../components/home/ContactSection.astro";
+
+// SEO Title
+const pageTitle =
+  "ACE AIRE S.A.S. | Climatización y Refrigeración Industrial Colombia";
+---
+
+<Layout
+  title={pageTitle}
+  description="Expertos en HVAC y Refrigeración Industrial para proyectos de gran escala. Construcción, mantenimiento y distribución mayorista en toda Colombia."
+>
+  <Header />
+  <main>
+    <Hero
+      title="Ingeniería Experta para Proyectos de Gran Escala"
+      subtitle="Más de 40 años garantizando eficiencia energética, confort y continuidad operativa en los sectores más exigentes."
+      primaryCtaText="Conozca Nuestros Proyectos"
+      primaryCtaLink="/proyectos"
+      secondaryCtaText="Nuestros Servicios"
+      secondaryCtaLink="/servicios"
+      data-aos="fade-up"
+    />
+
+    <Stats data-aos="fade-up" data-aos-delay="100" />
+
+    <ValueProps data-aos="fade-up" data-aos-delay="200" />
+
+    <WhyChooseUs data-aos="fade-up" />
+
+    <LogoCarousel data-aos="fade-up" data-aos-delay="300" />
+
+    <FeaturedProjects data-aos="fade-up" data-aos-delay="400" />
+
+    <ContactSection data-aos="fade-up" data-aos-delay="500" />
+  </main>
+  <Footer />
+</Layout>

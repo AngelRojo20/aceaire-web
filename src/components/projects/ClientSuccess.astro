@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+import sodecaLogo from "../../assets/clients/sodeca-184w.webp";
+import eeiiLogo from "../../assets/clients/eeii-170w.webp";
+import cotelLogo from "../../assets/clients/cotel-330w.webp";
+
+const testimonials = [
+  {
+    logo: sodecaLogo,
+    company: "SODECA",
+    author: "Ing. Davis Ossa",
+    role: "Project Manager", // Role inferred or generic if not provided, user only gave name. Keeping it simple or blank.
+    quote:
+      "Tengo el gusto de conocer a ACE AIRE SAS hace varios años y siempre ha sido de destacar su agilidad y profesionalismo. Al ver todo su crecimiento no me sorprende, es el resultado de años de esfuerzo y buen servicio. Es una compañía que brinda confianza.",
+  },
+  {
+    logo: eeiiLogo,
+    company: "EEII",
+    author: "Giovanni Rodriguez",
+    role: "Director de Operaciones",
+    quote:
+      "Llevo aproximadamente 10 años trabajando en conjunto con Ace Aire, este tiempo demuestra la calidad de las relaciones comerciales que hemos mantenido, sus servicios en suministro de equipos, asesorías y ejecución de proyectos han sido intachables, contando siempre con un servicio excepcional, amable, técnico y cumplido.",
+  },
+  {
+    logo: cotelLogo,
+    company: "COTEL",
+    author: "Ing. Nicolás Sotomayor",
+    role: "Gerente General",
+    quote:
+      "Con ACEAIRE encuentras un aliado estratégico en proyectos de aire acondicionado, es una empresa bien posicionada en el mercado, que te ofrece una variedad de soluciones muy amplia, y que cuenta con un respaldo de las marcas más reconocidas de aire acondicionado. Sin duda, tienen una atención muy oportuna, tanto en su línea comercial como en el desarrollo de proyectos.",
+  },
+];
+---
+
+<section class="py-20 bg-gray-50/50">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl font-bold font-heading text-primary mb-4">
+        Lo Que Dicen Nuestros Aliados
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        La confianza se construye con resultados. Conozca la experiencia de
+        quienes han depositado sus proyectos más críticos en nuestras manos.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {
+        testimonials.map((item, index) => (
+          <div
+            class="bg-white rounded-2xl shadow-md border-t-4 border-primary p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300"
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+          >
+            <div class="h-16 flex items-center justify-center mb-8 w-full">
+              <Image
+                src={item.logo}
+                alt={`Logo ${item.company}`}
+                class="max-h-full w-auto object-contain mixed-blend-multiply"
+                loading="lazy"
+              />
+            </div>
+
+            <blockquote class="text-gray-600 mb-6 italic leading-relaxed flex-grow">
+              "{item.quote}"
+            </blockquote>
+
+            <div class="mt-auto border-t border-gray-100 pt-6 w-full">
+              <h4 class="font-bold text-gray-900">{item.author}</h4>
+              <p class="text-sm text-primary font-medium">{item.company}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

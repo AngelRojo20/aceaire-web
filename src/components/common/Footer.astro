@@ -1,0 +1,169 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../assets/logo-en-blanco-1920w.png";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-primary text-gray-300 py-12 border-t border-white/10">
+  <div class="container mx-auto px-4 grid md:grid-cols-4 gap-12">
+    <div class="space-y-4">
+      <a href="/" class="block">
+        <Image
+          src={logo}
+          alt="ACE AIRE S.A.S. - Hace aire por Colombia"
+          class="h-28 w-auto object-contain"
+        />
+      </a>
+      <p class="text-sm leading-relaxed text-gray-400">
+        Líderes en ingeniería de climatización y refrigeración industrial.
+        Transformamos espacios con tecnología eficiente y sostenible.
+      </p>
+      <div class="flex gap-4 pt-4">
+        <a
+          href="https://www.facebook.com/AceAireSas"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-action hover:text-white transition-colors"
+          aria-label="Facebook"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path
+              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+            ></path></svg
+          >
+        </a>
+        <a
+          href="https://www.instagram.com/aceairesas/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-action hover:text-white transition-colors"
+          aria-label="Instagram"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path
+              d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line
+              x1="17.5"
+              x2="17.51"
+              y1="6.5"
+              y2="6.5"></line></svg
+          >
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="text-white font-bold mb-6 font-heading">Soluciones</h4>
+      <ul class="space-y-3 text-sm">
+        <li>
+          <a
+            href="/soluciones#constructoras"
+            class="hover:text-action transition-colors">Para Constructoras</a
+          >
+        </li>
+        <li>
+          <a
+            href="/soluciones#mayoristas"
+            class="hover:text-action transition-colors"
+            >Integradores Mayoristas</a
+          >
+        </li>
+        <li>
+          <a
+            href="/soluciones#industria"
+            class="hover:text-action transition-colors">Sector Industrial</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white font-bold mb-6 font-heading">Mapa del Sitio</h4>
+      <ul class="space-y-3 text-sm">
+        <li>
+          <a href="/nosotros" class="hover:text-action transition-colors"
+            >Nosotros</a
+          >
+        </li>
+        <li>
+          <a href="/servicios" class="hover:text-action transition-colors"
+            >Servicios</a
+          >
+        </li>
+        <li>
+          <a href="/proyectos" class="hover:text-action transition-colors"
+            >Proyectos</a
+          >
+        </li>
+        <li>
+          <a href="/contacto" class="hover:text-action transition-colors"
+            >Contacto</a
+          >
+        </li>
+        <li>
+          <a href="/contacto#pagos" class="hover:text-action transition-colors"
+            >Pagos en Línea</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white font-bold mb-6 font-heading">Contacto</h4>
+      <ul class="space-y-4 text-sm text-gray-400">
+        <li class="flex items-start gap-3">
+          <span class="text-xl">📍</span>
+          <span>
+            <strong class="text-white block mb-1">Celta Trade Park</strong>
+            Autopista Medellín Km 7<br />
+            Bodega 45, Etapa 2<br />
+            Funza, Cundinamarca
+          </span>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-xl">📞</span>
+          <a href="tel:+573112727664" class="hover:text-white transition-colors"
+            >(311) 272-7664</a
+          >
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-xl">📧</span>
+          <a
+            href="mailto:ventas@aceaire.com"
+            class="hover:text-white transition-colors">ventas@aceaire.com</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="container mx-auto px-4 mt-12 pt-8 border-t border-slate-700/50 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500"
+  >
+    <p>&copy; {currentYear} ACE AIRE S.A.S.</p>
+    <div class="flex gap-6">
+      <a
+        href="/politica-de-privacidad"
+        class="hover:text-white transition-colors underline decoration-slate-600 underline-offset-4"
+        >Política de Privacidad</a
+      >
+    </div>
+  </div>
+</footer>

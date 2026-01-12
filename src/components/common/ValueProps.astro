@@ -1,0 +1,108 @@
+---
+const pillars = [
+  {
+    title: "Grandes Constructoras",
+    badge: "Llave en Mano",
+    description:
+      "Gestión integral de proyectos HVAC desde el diseño hasta la puesta en marcha. Cumplimiento estricto de cronogramas y normativa RETIE/RITE.",
+    icon: "🏗️",
+    link: "/soluciones#constructoras",
+    features: [
+      "Cumplimiento de Plazos",
+      "Ingeniería Certificada",
+      "Soporte Post-venta",
+    ],
+  },
+  {
+    title: "Canal Mayorista",
+    badge: "Stock Inmediato",
+    description:
+      "Socio estratégico para integradores. Amplio inventario de equipos York, Carrier, LG y repuestos originales con despacho nacional.",
+    icon: "📦",
+    link: "/soluciones#mayoristas",
+    features: [
+      "Precios Competitivos",
+      "Repuestos Originales",
+      "Logística Nacional",
+    ],
+  },
+  {
+    title: "Ingeniería Industrial",
+    badge: "Continuidad Operativa",
+    description:
+      "Maximice su Uptime con planes de mantenimiento predictivo y correctivo. Auditorías de eficiencia energética y retrofit de equipos.",
+    icon: "⚙️",
+    link: "/soluciones#industria",
+    features: [
+      "Mantenimiento 24/7",
+      "Eficiencia Energética",
+      "Monitoreo Remoto",
+    ],
+  },
+];
+---
+
+<section class="py-24 bg-white relative z-10">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span
+        class="text-action font-bold uppercase tracking-wider text-sm mb-2 block"
+        >Nuestras Verticales</span
+      >
+      <h2 class="text-3xl md:text-4xl font-bold text-primary font-heading mb-6">
+        Ingeniería que Respalda su Operación
+      </h2>
+      <p class="text-gray-600 text-lg">
+        Especialización técnica adaptada a las necesidades críticas de cada
+        sector.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        pillars.map((pillar, index) => (
+          <a
+            href={pillar.link}
+            class="relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-action/30 transition-all duration-300 group hover:-translate-y-2 flex flex-col h-full overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+          >
+            <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-150 duration-500">
+              <span class="text-9xl grayscale group-hover:grayscale-0">
+                {pillar.icon}
+              </span>
+            </div>
+
+            <div class="mb-6">
+              <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide border border-blue-100">
+                {pillar.badge}
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-bold font-heading text-primary mb-4 group-hover:text-action transition-colors">
+              {pillar.title}
+            </h3>
+
+            <p class="text-gray-600 mb-8 leading-relaxed flex-grow relative z-10">
+              {pillar.description}
+            </p>
+
+            <ul class="space-y-2 mb-8 border-t border-gray-100 pt-6">
+              {pillar.features.map((feature) => (
+                <li class="text-sm text-gray-500 flex items-center gap-2">
+                  <span class="text-action">✓</span> {feature}
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-auto">
+              <span class="text-primary font-bold flex items-center gap-2 text-sm uppercase tracking-wider group-hover:gap-4 transition-all group-hover:text-action">
+                Ver Soluciones <span class="text-xl leading-none">&rarr;</span>
+              </span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

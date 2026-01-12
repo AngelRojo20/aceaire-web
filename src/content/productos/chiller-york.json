@@ -1,0 +1,15 @@
+{
+  "sku": "CH-YORK-YZ",
+  "name": "Chiller Magnético YORK YZ",
+  "brand": "YORK",
+  "category": "Climatización Industrial",
+  "subcategory": "Chillers Centrífugos",
+  "description": "Enfriadora de líquido con compresor centrífugo de levitación magnética. Diseñado para ofrecer la máxima eficiencia en cargas parciales.",
+  "specs": {
+    "Capacidad": "165 - 1350 TR",
+    "Refrigerante": "R-1233zd(E) (GWP < 1)",
+    "Compresor": "Centrífugo Magnético",
+    "Eficiencia": "Hasta 0.1 kW/TR"
+  },
+  "inStock": false
+}
