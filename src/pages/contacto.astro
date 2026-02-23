@@ -9,23 +9,16 @@ import heroImage from "../assets/hero-bg.jpg"; // Using generic hero background
 import socialBgImg from "../assets/social-bg.png";
 import chillerCommand from "../assets/chiller-command.jpg";
 import cultureHero from "../assets/culture-hero.jpg";
+import girardotSede from "../assets/girardot.jpeg";
+import celtaSede from "../assets/celta-trade-park.png";
 
 // Metadata
-const pageTitle = "Contacto e Ingeniería | ACE AIRE S.A.S.";
+const pageTitle = "Contacto | ACE AIRE S.A.S.";
 const pageDescription =
-  "Conecte con nuestra ingeniería. Sedes en Funza y Girardot para atención nacional en proyectos HVAC.";
+  "Todos nuestros canales de atención dispuestos a ayudarle. Sedes en Funza y Girardot para atención nacional en proyectos de ingeniería.";
 
 // Channels Data
 const channels = [
-  {
-    title: "Ventas y Asesoría",
-    phone: "311 272 7664",
-    link: "https://wa.me/573112727664?text=Hola,%20necesito%20asesoría%20comercial",
-    cta: "Chatear con un Asesor",
-    icon: "phone",
-    target: "_blank",
-    rel: "noopener noreferrer",
-  },
   {
     title: "Proyectos e Ingeniería",
     phone: "320 228 5812",
@@ -36,10 +29,19 @@ const channels = [
     rel: "noopener noreferrer",
   },
   {
+    title: "Ventas y Asesoría",
+    phone: "311 272 7664",
+    link: "https://wa.me/573112727664?text=Hola,%20necesito%20asesoría%20comercial",
+    cta: "Chatear con un Asesor",
+    icon: "phone",
+    target: "_blank",
+    rel: "noopener noreferrer",
+  },
+  {
     title: "Servicio al Cliente",
     phone: "311 202 7807",
     link: "https://wa.me/573112027807?text=Hola,%20necesito%20soporte%20técnico",
-    cta: "Soporte Técnico",
+    cta: "Atención al cliente",
     icon: "headphones",
     target: "_blank",
     rel: "noopener noreferrer",
@@ -58,11 +60,11 @@ const channels = [
 
 <Layout title={pageTitle} description={pageDescription}>
   <Header />
-  <main>
+  <main class="pt-[112px]">
     <!-- Hero Section -->
     <Hero
-      title="Conecte con la Ingeniería HVAC de Vanguardia"
-      subtitle="Estamos listos para dimensionar su próximo gran proyecto en cualquier punto de Colombia"
+      title="Todos nuestros canales de atención dispuestos a ayudarle"
+      subtitle="Estamos listos para dimensionar su próximo proyecto con soluciones de ingeniería precisas y personalizadas"
       backgroundImage={heroImage}
       minHeight="min-h-[60vh]"
     />
@@ -188,7 +190,7 @@ const channels = [
           >
             <div class="h-64 relative overflow-hidden group">
               <Image
-                src={chillerCommand}
+                src={celtaSede}
                 alt="Instalaciones Sede Central Funza - ACE AIRE S.A.S."
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -246,7 +248,7 @@ const channels = [
           >
             <div class="h-64 relative overflow-hidden group">
               <Image
-                src={cultureHero}
+                src={girardotSede}
                 alt="Equipo de Ingeniería Sede Girardot - ACE AIRE S.A.S."
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -306,7 +308,7 @@ const channels = [
         <div data-aos="fade-right">
           <Image
             src={socialBgImg}
-            alt="Ingeniería HVAC en acción"
+            alt="Equipo de ingeniería ACE AIRE en acción"
             class="rounded-2xl shadow-xl aspect-video md:aspect-square object-cover w-full h-full"
             loading="lazy"
           />
@@ -411,7 +413,7 @@ const channels = [
     <PaymentPortal />
 
     <!-- Formulario B2B -->
-    <section class="py-16 bg-white" id="formulario">
+    <section class="py-16 bg-white scroll-mt-28" id="formulario">
       <div class="container mx-auto px-4 max-w-4xl">
         <div class="text-center mb-12" data-aos="fade-up">
           <h2 class="text-3xl font-bold font-heading text-primary">

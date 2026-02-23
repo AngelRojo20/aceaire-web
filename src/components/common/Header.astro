@@ -3,15 +3,93 @@ import { Image } from "astro:assets";
 import logo from "../../assets/logo-en-blanco-1920w.png";
 
 const navItems = [
-  { name: "Nosotros", href: "/nosotros" },
-  { name: "Soluciones", href: "/soluciones" },
-  { name: "Servicios", href: "/servicios" },
   { name: "Proyectos", href: "/proyectos" },
+  { name: "Servicios", href: "/servicios" },
+  { name: "Soluciones", href: "/soluciones" },
+  { name: "Nosotros", href: "/nosotros" },
   { name: "Contacto", href: "/contacto" },
 ];
 ---
 
-<header class="sticky top-0 z-50 bg-primary text-white shadow-lg">
+<header
+  class="fixed top-0 left-0 w-full z-50 bg-primary/95 backdrop-blur-sm text-white shadow-lg"
+>
+  <!-- Top Bar de Contacto -->
+  <div class="bg-[#0a1628] text-white">
+    <div
+      class="container mx-auto px-4 h-9 flex items-center justify-center gap-6 text-xs sm:text-sm"
+    >
+      <a
+        href="tel:+573202285812"
+        class="flex items-center gap-1.5 hover:text-action transition-colors"
+        aria-label="Llamar a proyectos: (320) 228-5812"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-3.5 h-3.5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+          ></path>
+        </svg>
+        <span>(320) 228-5812</span>
+      </a>
+      <span class="hidden sm:inline text-white/30">|</span>
+      <a
+        href="mailto:ventas@aceaire.com"
+        class="hidden sm:flex items-center gap-1.5 hover:text-action transition-colors"
+        aria-label="Enviar correo a ventas@aceaire.com"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-3.5 h-3.5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+          ></path>
+        </svg>
+        <span>ventas@aceaire.com</span>
+      </a>
+      <span class="hidden sm:inline text-white/30">|</span>
+      <a
+        href="https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=9762"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden sm:flex items-center gap-1.5 hover:text-action transition-colors font-medium"
+        aria-label="Ir al Portal de Pagos PSE"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-3.5 h-3.5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"
+          ></path>
+        </svg>
+        <span>Pagos PSE</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Navegación Principal -->
   <div class="container mx-auto px-4 py-1 flex justify-between items-center">
     <a
       href="/"
@@ -42,7 +120,7 @@ const navItems = [
       href="https://wa.me/573112727664?text=Hola,%20necesito%20asesoría%20comercial"
       target="_blank"
       rel="noopener noreferrer"
-      class="hidden md:block bg-action hover:bg-orange-600 text-white px-6 py-2 rounded-md font-bold transition-colors shadow-md"
+      class="hidden md:inline-flex shrink-0 bg-action hover:bg-orange-600 text-white px-6 py-2 rounded-md font-bold transition-colors shadow-md hover:shadow-lg"
     >
       Cotizar Proyecto
     </a>
