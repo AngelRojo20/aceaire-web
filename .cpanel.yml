@@ -1,0 +1,5 @@
+# Archivo .cpanel.yml
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/aceairec/public_html/
+    - /bin/cp -R dist/* $DEPLOYPATH
