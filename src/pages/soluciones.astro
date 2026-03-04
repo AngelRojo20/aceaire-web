@@ -8,28 +8,225 @@ import { Image } from "astro:assets";
 
 // Images
 import heroBg from "../assets/hero-bg.jpg";
-import constructorasImg from "../assets/hospital-ahu.jpg"; // Using AHU for large construction
-import mayoristasImg from "../assets/kitchen-ducts.jpg"; // Using Ducts as proxy for "product/supply" or generic industrial
-import industriaImg from "../assets/chiller-command.jpg"; // Technical/Critical support
+import constructorasImg from "../assets/hospital-ahu.jpg";
+import mayoristasImg from "../assets/kitchen-ducts.jpg";
+import industriaImg from "../assets/chiller-command.jpg";
 
 const pageTitle = "Soluciones Integrales HVAC | ACE AIRE S.A.S.";
 const pageDescription =
-  "Ingeniería de extremo a extremo: Proyectos para constructoras, suministro mayorista y soporte crítico para la industria.";
+  "Ingeniería de extremo a extremo: diseño, alianzas estratégicas, ejecución coordinada y puesta en marcha. Más de 40 años de experiencia técnica en Colombia.";
+
+const cicloVida = [
+  {
+    step: "01",
+    title: "Diseño",
+    description:
+      "Levantamiento técnico, cálculos de carga térmica, selección de equipos y planos de ingeniería según normativa RETIE/RITE.",
+    icon: "pencil",
+  },
+  {
+    step: "02",
+    title: "Alianzas de Suministro",
+    description:
+      "Gestión directa con fabricantes globales (Daikin, LG, Samsung, Trane, Bosch) para garantizar la mejor tecnología y condiciones.",
+    icon: "handshake",
+  },
+  {
+    step: "03",
+    title: "Ejecución Coordinada",
+    description:
+      "Instalación supervisada por ingenieros certificados, cumplimiento de cronogramas y coordinación con otros contratistas de la obra.",
+    icon: "wrench",
+  },
+  {
+    step: "04",
+    title: "Puesta en Marcha",
+    description:
+      "Pruebas de rendimiento, balanceo de sistemas, capacitación al cliente y entrega de documentación técnica completa.",
+    icon: "check",
+  },
+];
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
   <Header />
-  <main>
+  <main class="pt-[112px]">
     <!-- Hero Section -->
     <Hero
-      title="Ingeniería HVAC: Soluciones de Extremo a Extremo"
-      subtitle="Desde el diseño conceptual hasta el soporte crítico, respaldamos la operación de los sectores más exigentes de Colombia"
+      title="Visualizamos su Proyecto desde Cero"
+      subtitle="Usted pone el requerimiento, nosotros entregamos la solución de inicio a fin. Más de 40 años convirtiendo desafíos de ingeniería en realidad."
       backgroundImage={heroBg}
       minHeight="min-h-[60vh]"
     />
 
-    <!-- Section 1: Grandes Constructoras -->
-    <section id="constructoras" class="py-20 md:py-28 scroll-mt-32">
+    <!-- Bloque de Propuesta de Valor -->
+    <section class="py-20 md:py-28 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+          <div
+            class="inline-block px-4 py-1.5 bg-blue-50 text-primary text-xs font-bold uppercase tracking-widest rounded-full mb-6"
+          >
+            Nuestra Filosofía
+          </div>
+          <h2
+            class="text-3xl md:text-4xl font-bold font-heading text-primary mb-6"
+          >
+            Ingeniería Integral: del Concepto a la Realidad
+          </h2>
+          <p
+            class="text-lg text-gray-600 leading-relaxed mb-8 max-w-3xl mx-auto"
+          >
+            No somos intermediarios, somos <strong class="text-gray-800"
+              >ingenieros que visualizan la solución completa</strong
+            >. Cada proyecto nace de un análisis técnico riguroso y se ejecuta
+            con la precisión que solo 40 años de experiencia pueden garantizar.
+            Usted pone el requerimiento, nosotros entregamos la solución.
+          </p>
+          <div class="grid sm:grid-cols-3 gap-6 mt-12">
+            <div class="text-center p-6">
+              <div class="text-4xl font-black text-primary mb-2">+90.000</div>
+              <p class="text-gray-500 text-sm font-medium">
+                TR Instaladas en Colombia
+              </p>
+            </div>
+            <div class="text-center p-6">
+              <div class="text-4xl font-black text-primary mb-2">+40</div>
+              <p class="text-gray-500 text-sm font-medium">
+                Años de Experiencia Técnica
+              </p>
+            </div>
+            <div class="text-center p-6">
+              <div class="text-4xl font-black text-primary mb-2">100%</div>
+              <p class="text-gray-500 text-sm font-medium">
+                Ciclo de Vida Cubierto
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ciclo de Vida del Proyecto -->
+    <section id="hospitalario" class="py-20 md:py-28 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <div
+            class="inline-block px-4 py-1.5 bg-blue-50 text-primary text-xs font-bold uppercase tracking-widest rounded-full mb-4"
+          >
+            Proceso de Ingeniería
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold font-heading text-primary">
+            Ciclo de Vida del Proyecto
+          </h2>
+          <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
+            Un proceso estructurado que garantiza calidad, trazabilidad y
+            resultados medibles en cada fase.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {
+            cicloVida.map((fase, index) => (
+              <div
+                class="relative bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                {/* Step Number */}
+                <div class="text-6xl font-black text-primary/5 absolute top-4 right-6 group-hover:text-primary/10 transition-colors">
+                  {fase.step}
+                </div>
+
+                {/* Icon */}
+                <div class="w-14 h-14 rounded-xl bg-primary/5 group-hover:bg-primary group-hover:text-white text-primary flex items-center justify-center mb-6 transition-all duration-300">
+                  {fase.icon === "pencil" && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="28"
+                      height="28"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
+                      <path d="m15 5 4 4" />
+                    </svg>
+                  )}
+                  {fase.icon === "handshake" && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="28"
+                      height="28"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+                      <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+                      <path d="m21 3 1 11h-2" />
+                      <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+                      <path d="M3 4h8" />
+                    </svg>
+                  )}
+                  {fase.icon === "wrench" && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="28"
+                      height="28"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                    </svg>
+                  )}
+                  {fase.icon === "check" && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="28"
+                      height="28"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <path d="m9 11 3 3L22 4" />
+                    </svg>
+                  )}
+                </div>
+
+                <h3 class="text-xl font-bold font-heading text-primary mb-3">
+                  {fase.title}
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  {fase.description}
+                </p>
+
+                {/* Connector line */}
+                {index < 3 && (
+                  <div class="hidden lg:block absolute top-1/2 -right-4 w-8 border-t-2 border-dashed border-primary/20 z-20" />
+                )}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Ingeniería de Diseño y Ejecución -->
+    <section id="climatizacion" class="py-20 md:py-28 scroll-mt-32">
       <div class="container mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div data-aos="fade-right">
@@ -46,17 +243,8 @@ const pageDescription =
             <p class="text-lg text-gray-600 leading-relaxed mb-6">
               Diseño conceptual, suministro, instalación y puesta en marcha.
               Entendemos que cada obra es un ecosistema único y requiere
-              soluciones integrales.
+              soluciones integrales que cumplan con los más altos estándares.
             </p>
-
-            <div
-              class="mb-8 p-4 bg-blue-50 border-l-4 border-primary rounded-r-lg"
-            >
-              <p class="text-primary font-bold text-lg">
-                +90.000 TR instaladas en todo el territorio nacional como
-                respaldo de nuestra capacidad logística.
-              </p>
-            </div>
 
             <ul class="space-y-4 mb-8">
               <li class="flex items-start gap-3">
@@ -110,10 +298,11 @@ const pageDescription =
             </ul>
             <a
               href="/contacto"
-              class="text-primary font-bold hover:text-blue-700 transition-colors inline-flex items-center gap-2 group"
+              class="inline-flex items-center justify-center px-8 py-4 bg-action text-white font-bold rounded-full hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl group text-lg"
             >
-              Cotizar Proyecto <span
-                class="group-hover:translate-x-1 transition-transform">→</span
+              Solicitar Propuesta
+              <span class="ml-2 group-hover:translate-x-1 transition-transform"
+                >→</span
               >
             </a>
           </div>
@@ -136,8 +325,8 @@ const pageDescription =
       </div>
     </section>
 
-    <!-- Section 2: Canal Mayorista -->
-    <section id="mayoristas" class="py-20 md:py-28 bg-gray-50 scroll-mt-32">
+    <!-- Section 2: Alianzas Estratégicas -->
+    <section id="industriales" class="py-20 md:py-28 bg-gray-50 scroll-mt-32">
       <div class="container mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div class="order-2 lg:order-1 relative" data-aos="fade-right">
@@ -147,7 +336,7 @@ const pageDescription =
             </div>
             <Image
               src={mayoristasImg}
-              alt="Suministro Mayorista HVAC"
+              alt="Alianzas Estratégicas HVAC Global"
               width={800}
               height={600}
               class="relative z-10 rounded-xl shadow-md w-full object-cover h-[500px] transition-transform duration-500 hover:scale-[1.02] hover:shadow-2xl"
@@ -155,46 +344,48 @@ const pageDescription =
           </div>
           <div class="order-1 lg:order-2" data-aos="fade-left">
             <div
-              class="inline-block px-3 py-1 bg-green-50 text-green-700 text-xs font-bold uppercase tracking-wider rounded-full mb-4"
+              class="inline-block px-3 py-1 bg-blue-50 text-primary text-xs font-bold uppercase tracking-wider rounded-full mb-4"
             >
-              Distribución y Stock
+              Respaldo Global
             </div>
             <h2
               class="text-3xl md:text-4xl font-bold font-heading text-primary mb-6"
             >
-              Canal Mayorista
+              Alianzas Estratégicas y Respaldo Global
             </h2>
             <p class="text-lg text-gray-600 leading-relaxed mb-6">
-              Garantizamos disponibilidad inmediata y precios competitivos para
-              instaladores y contratistas. Como líderes nacionales en ventas,
-              transferimos el valor de nuestra escala a su negocio.
+              Contamos con alianzas sólidas de años con las marcas más
+              reconocidas del mercado global, garantizando acceso a la
+              tecnología más avanzada y el respaldo directo de fábrica para cada
+              proyecto.
             </p>
             <div class="grid grid-cols-2 gap-6 mb-8">
               <div
-                class="bg-white p-4 rounded-lg shadow-sm border border-gray-100"
+                class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"
               >
                 <h4 class="font-bold text-gray-900 mb-2">Marcas Aliadas</h4>
                 <p class="text-sm text-gray-500">
-                  Líderes nacionales en ventas de marcas globales (LG, TECAM).
+                  Socios estratégicos de Daikin, LG, Samsung, TRANE, BOSCH y
+                  más.
                 </p>
               </div>
               <div
-                class="bg-white p-4 rounded-lg shadow-sm border border-gray-100"
+                class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"
               >
-                <h4 class="font-bold text-gray-900 mb-2">
-                  Repuestos Originales
-                </h4>
+                <h4 class="font-bold text-gray-900 mb-2">Acceso Directo</h4>
                 <p class="text-sm text-gray-500">
-                  Inventario genuino para asegurar la vida útil de los equipos.
+                  Gestión directa con fabricantes para condiciones
+                  preferenciales y soporte técnico especializado.
                 </p>
               </div>
             </div>
             <a
               href="/contacto"
-              class="text-primary font-bold hover:text-blue-700 transition-colors inline-flex items-center gap-2 group"
+              class="inline-flex items-center justify-center px-8 py-4 bg-action text-white font-bold rounded-full hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl group text-lg"
             >
-              Consultar Inventario <span
-                class="group-hover:translate-x-1 transition-transform">→</span
+              Consultar Disponibilidad
+              <span class="ml-2 group-hover:translate-x-1 transition-transform"
+                >→</span
               >
             </a>
           </div>
@@ -202,40 +393,56 @@ const pageDescription =
       </div>
     </section>
 
-    <!-- Section 3: Industria y Logística -->
-    <section id="industria" class="py-20 md:py-28 scroll-mt-32">
+    <!-- Section 3: El Conocimiento -->
+    <section id="ventilacion" class="py-20 md:py-28 scroll-mt-32">
       <div class="container mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div data-aos="fade-right">
             <div
               class="inline-block px-3 py-1 bg-orange-50 text-action text-xs font-bold uppercase tracking-wider rounded-full mb-4"
             >
-              Misión Crítica
+              Nuestra Mayor Ventaja
             </div>
             <h2
               class="text-3xl md:text-4xl font-bold font-heading text-primary mb-6"
             >
-              Ingeniería Industrial
+              El Conocimiento como Diferencial Competitivo
             </h2>
             <p class="text-lg text-gray-600 leading-relaxed mb-6">
-              Sus procesos no pueden detenerse. Proveemos soluciones robustas
-              para entornos donde el control de temperatura es vital para la
-              producción y la seguridad.
+              Nuestra mayor ventaja competitiva es el conocimiento. Más de 40
+              años de experiencia técnica nos permiten dimensionar y ejecutar
+              soluciones de ingeniería precisas que otros no pueden visualizar.
             </p>
             <ul class="space-y-4 mb-8">
               <li class="flex items-start gap-4">
                 <div
                   class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-primary flex-shrink-0"
                 >
-                  📉
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"
+                    ></path>
+                    <path
+                      d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"
+                    ></path>
+                  </svg>
                 </div>
                 <div>
-                  <h4 class="font-bold text-gray-900">
-                    Bajo Costo Total de Propiedad (TCO)
-                  </h4>
+                  <h4 class="font-bold text-gray-900">Visión Técnica Única</h4>
                   <p class="text-sm text-gray-500 mt-1">
-                    Diseños optimizados para maximizar la eficiencia energética
-                    y financiera a largo plazo.
+                    Visualizamos la solución completa antes de que exista.
+                    Nuestros ingenieros dimensionan sistemas que se adaptan
+                    exactamente a cada necesidad.
                   </p>
                 </div>
               </li>
@@ -243,13 +450,56 @@ const pageDescription =
                 <div
                   class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-primary flex-shrink-0"
                 >
-                  🔄
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"
+                    ></path>
+                    <path d="M2 12h20"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900">Alcance Nacional</h4>
+                  <p class="text-sm text-gray-500 mt-1">
+                    Capacidad operativa para ejecutar proyectos en todo el
+                    territorio colombiano, desde hospitales de alta complejidad
+                    hasta data centers.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-primary flex-shrink-0"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                  </svg>
                 </div>
                 <div>
                   <h4 class="font-bold text-gray-900">Continuidad Operativa</h4>
                   <p class="text-sm text-gray-500 mt-1">
-                    Aseguramos el uptime de sus procesos industriales mediante
-                    sistemas robustos.
+                    Mantenimiento predictivo y correctivo que asegura el uptime
+                    de sus procesos industriales con sistemas robustos y
+                    confiables.
                   </p>
                 </div>
               </li>
@@ -257,41 +507,42 @@ const pageDescription =
                 <div
                   class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-primary flex-shrink-0"
                 >
-                  🛠️
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+                    ></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
                 </div>
                 <div>
                   <h4 class="font-bold text-gray-900">
-                    Mantenimiento Predictivo
+                    Garantía de Resultados
                   </h4>
                   <p class="text-sm text-gray-500 mt-1">
-                    Implementamos tecnología para prevenir fallos y prolongar la
-                    vida útil de equipos de alta capacidad.
-                  </p>
-                </div>
-              </li>
-              <li class="flex items-start gap-4">
-                <div
-                  class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-primary flex-shrink-0"
-                >
-                  💨
-                </div>
-                <div>
-                  <h4 class="font-bold text-gray-900">
-                    Ventilación Mecánica e Industrial
-                  </h4>
-                  <p class="text-sm text-gray-500 mt-1">
-                    Control de partículas y calidad de aire para ambientes
-                    exigentes.
+                    Cada proyecto se entrega con documentación técnica,
+                    capacitación y respaldo post-venta que asegura el
+                    rendimiento a largo plazo.
                   </p>
                 </div>
               </li>
             </ul>
             <a
               href="/contacto"
-              class="text-primary font-bold hover:text-blue-700 transition-colors inline-flex items-center gap-2 group"
+              class="inline-flex items-center justify-center px-8 py-4 bg-action text-white font-bold rounded-full hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl group text-lg"
             >
-              Solicitar Asesoría Técnica <span
-                class="group-hover:translate-x-1 transition-transform">→</span
+              Solicitar Asesoría Técnica
+              <span class="ml-2 group-hover:translate-x-1 transition-transform"
+                >→</span
               >
             </a>
           </div>
@@ -302,7 +553,7 @@ const pageDescription =
             </div>
             <Image
               src={industriaImg}
-              alt="Ingeniería HVAC Industrial"
+              alt="Conocimiento e Ingeniería HVAC de Precisión"
               width={800}
               height={600}
               class="relative z-10 rounded-xl shadow-lg w-full object-cover h-[500px] transition-transform duration-500 hover:scale-[1.02] hover:shadow-2xl"

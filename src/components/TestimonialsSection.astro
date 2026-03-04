@@ -1,7 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import vivianaImg from "../assets/team/viviana-torres.jpg";
-import marioImg from "../assets/team/mario-torres.jpg";
+import patriciaImg from "../assets/team/patricia-salas.jpg";
+import julianImg from "../assets/team/julian-higuera.jpeg";
 ---
 
 <section class="py-20 bg-white">
@@ -17,11 +18,11 @@ import marioImg from "../assets/team/mario-torres.jpg";
     </div>
 
     <div
-      class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto"
+      class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto"
     >
       <!-- Viviana Torres -->
       <div
-        class="bg-gray-50 p-8 md:p-10 rounded-2xl relative group hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100"
+        class="bg-gray-50 p-8 md:p-10 rounded-2xl relative group hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100 flex flex-col h-full"
         data-aos="fade-up"
         data-aos-delay="100"
       >
@@ -43,7 +44,7 @@ import marioImg from "../assets/team/mario-torres.jpg";
         </div>
 
         <div
-          class="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-6"
+          class="relative z-10 flex flex-col items-center md:items-start gap-6 flex-grow"
         >
           <div class="flex-shrink-0">
             <Image
@@ -56,14 +57,16 @@ import marioImg from "../assets/team/mario-torres.jpg";
               class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-4 border-white shadow-md mx-auto"
             />
           </div>
-          <div class="text-center md:text-left">
-            <blockquote class="text-gray-600 italic leading-relaxed mb-4">
+          <div class="text-center md:text-left flex flex-col flex-grow">
+            <blockquote
+              class="text-gray-600 italic leading-relaxed mb-4 flex-grow"
+            >
               "Trabajar en ACE AIRE SAS es una experiencia de vida en donde he
               podido crecer profesional y personalmente... La Compañía me ha
               brindado la oportunidad de aprender a todo nivel... GRACIAS ACE
               AIRE SAS"
             </blockquote>
-            <div>
+            <div class="mt-auto">
               <h4 class="text-lg font-bold text-primary">
                 Viviana Torres López
               </h4>
@@ -77,9 +80,9 @@ import marioImg from "../assets/team/mario-torres.jpg";
         </div>
       </div>
 
-      <!-- Mario Torres -->
+      <!-- Patricia Salas -->
       <div
-        class="bg-gray-50 p-8 md:p-10 rounded-2xl relative group hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100"
+        class="bg-gray-50 p-8 md:p-10 rounded-2xl relative group hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100 flex flex-col h-full"
         data-aos="fade-up"
         data-aos-delay="200"
       >
@@ -101,12 +104,12 @@ import marioImg from "../assets/team/mario-torres.jpg";
         </div>
 
         <div
-          class="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-6"
+          class="relative z-10 flex flex-col items-center md:items-start gap-6 flex-grow"
         >
           <div class="flex-shrink-0">
             <Image
-              src={marioImg}
-              alt="Mario Torres"
+              src={patriciaImg}
+              alt="Patricia Salas"
               width={400}
               height={400}
               format="webp"
@@ -114,19 +117,79 @@ import marioImg from "../assets/team/mario-torres.jpg";
               class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-4 border-white shadow-md mx-auto"
             />
           </div>
-          <div class="text-center md:text-left">
-            <blockquote class="text-gray-600 italic leading-relaxed mb-4">
-              "Hace 24 años tomé un camino, el cual no me imaginé que sería la
-              mejor experiencia de mi vida... he crecido profesionalmente y cada
-              día aprendo más para brindarle a nuestros clientes un servicio
-              cargado de experiencia y conocimiento..."
+          <div class="text-center md:text-left flex flex-col flex-grow">
+            <blockquote
+              class="text-gray-600 italic leading-relaxed mb-4 flex-grow"
+            >
+              "27 años de experiencia en esta hermosa compañía... Me brindó la
+              oportunidad de crecer personal y profesionalmente. Hemos tenido
+              fracasos y triunfos, pero siempre hemos unido fuerzas para salir
+              adelante. Hoy veo que la Compañía y yo hemos crecido de la mano."
             </blockquote>
-            <div>
-              <h4 class="text-lg font-bold text-primary">Mario Torres</h4>
+            <div class="mt-auto">
+              <h4 class="text-lg font-bold text-primary">Patricia Salas</h4>
               <p
                 class="text-sm text-gray-500 uppercase tracking-wider font-medium"
               >
-                Colaborador ACE AIRE
+                Colaboradora Senior - 27 años de trayectoria
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Julian Higuera -->
+      <div
+        class="bg-gray-50 p-8 md:p-10 rounded-2xl relative group hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100 flex flex-col h-full"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <!-- Quote Icon -->
+        <div
+          class="absolute top-8 right-8 text-blue-100 group-hover:text-blue-50 transition-colors"
+        >
+          <svg
+            width="60"
+            height="60"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"
+            ></path>
+          </svg>
+        </div>
+
+        <div
+          class="relative z-10 flex flex-col items-center md:items-start gap-6 flex-grow"
+        >
+          <div class="flex-shrink-0">
+            <Image
+              src={julianImg}
+              alt="Julian Higuera"
+              width={400}
+              height={400}
+              format="webp"
+              quality="high"
+              class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-4 border-white shadow-md mx-auto"
+            />
+          </div>
+          <div class="text-center md:text-left flex flex-col flex-grow">
+            <blockquote
+              class="text-gray-600 italic leading-relaxed mb-4 flex-grow"
+            >
+              "ACE AIRE ha sido una de mis mejores experiencias, permitiéndome
+              crecer constante, personal y profesionalmente. Lo que más valoro
+              de la compañía es el genuino cuidado y la atención que brindan a
+              todo el equipo de trabajo."
+            </blockquote>
+            <div class="mt-auto">
+              <h4 class="text-lg font-bold text-primary">Julian Higuera</h4>
+              <p
+                class="text-sm text-gray-500 uppercase tracking-wider font-medium"
+              >
+                Ejecutivo Comercial - 4 años de trayectoria
               </p>
             </div>
           </div>
