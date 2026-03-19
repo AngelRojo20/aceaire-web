@@ -28,7 +28,7 @@ if (empty($name) && empty($email) && empty($message)) {
 }
 
 // Configuración del correo
-$to = "mabohada.96@gmail.com";
+$to = "ventas@aceaire.com";
 $subject = "Nueva Solicitud de Información - Sitio Web ACE AIRE";
 
 // Construir el cuerpo del mensaje
