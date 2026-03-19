@@ -27,7 +27,7 @@
         <h3 class="text-2xl font-bold font-heading text-primary mb-6">
           Solicitud de Información
         </h3>
-        <form class="space-y-6 flex-grow">
+        <form id="contact-form" class="space-y-6 flex-grow">
           <div>
             <label
               for="name"
@@ -283,3 +283,54 @@
     </div>
   </div>
 </section>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const submitButton = form.querySelector(
+        'button[type="submit"]',
+      ) as HTMLButtonElement;
+      if (!submitButton) return;
+
+      const originalText = submitButton.innerText;
+      submitButton.innerText = "Enviando...";
+      submitButton.disabled = true;
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch("/send-email.php", {
+          method: "POST",
+          body: formData,
+        });
+
+        let result: any = {};
+        try {
+          result = await response.json();
+        } catch (err) {
+          console.warn("El servidor no devolvió JSON válido");
+        }
+
+        if (response.ok) {
+          alert(
+            "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.",
+          );
+          form.reset();
+        } else {
+          alert(result.message || "Hubo un error al enviar el mensaje.");
+        }
+      } catch (error) {
+        console.error("Error enviando formulario:", error);
+        alert(
+          "Hubo un error al enviar el mensaje. Por favor intente más tarde o contáctenos por teléfono.",
+        );
+      } finally {
+        submitButton.innerText = originalText;
+        submitButton.disabled = false;
+      }
+    });
+  }
+</script>
